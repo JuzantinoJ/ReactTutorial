@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { AuthProvider } from './AuthContext';
+import HomePage from './pages/HomePage';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <div className="bg-light min-vh-100 d-flex align-items-center justify-content-center">
+        <HomePage />
+      </div>
+    </AuthProvider>
   );
 }
-
-export default App;

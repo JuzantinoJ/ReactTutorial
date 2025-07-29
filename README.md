@@ -1,3 +1,28 @@
+
+
+
+# [React Hooks: useEffect, useState, and useContext – A Complete Guide](https://www.freecodecamp.org/news/react-hooks-useeffect-usestate-and-usecontext/)
+
+![App Screenshot](./Picture1.png)
+
+# Component Flow:
+
+1.  **App.js** - Root component that wraps everything with `AuthProvider`.
+2.  **AuthContext.js** - Creates and manages global authentication state:
+    * `isAuthenticated` state
+    * `login()` and `logout()` functions
+    * Provides `useAuth` hook for easy access
+3.  **HomePage.js** - Main page that renders both user components.
+4.  **UserProfile.js** - Displays user information:
+    * Checks authentication status via `useAuth`
+    * Shows loading spinner → fetches mock data → displays profile
+    * Shows login prompt if not authenticated
+5.  **AuthStatus.js** - Authentication controls:
+    * Uses `useAuth` to access login/logout functions
+    * Shows current auth status and toggle buttons
+
+The app uses React Context API to share authentication state across components without prop drilling, and demonstrates a typical authentication flow with loading states and conditional rendering.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
