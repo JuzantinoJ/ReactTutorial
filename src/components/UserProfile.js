@@ -13,6 +13,13 @@ const UserProfile = () => {
     }
 
     setIsLoading(true);
+    /**
+     * Simulates fetching user data asynchronously.
+     * After a delay, sets mock user data and updates loading state.
+     *
+     * @function
+     * @returns {void}
+     */
     const fetchUserData = () => {
       setTimeout(() => {
         const mockUserData = {

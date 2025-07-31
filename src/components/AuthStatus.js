@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth } from '../AuthContext';
 
-const AuthStatus = () => {
+const AuthStatus = ({ last_datetime }) => {
   const { isAuthenticated, login, logout } = useAuth();
 
   return (
@@ -27,6 +27,13 @@ const AuthStatus = () => {
           </button>
         </div>
       </div>
+      {last_datetime && (
+        <div className="mt-2">
+          <p className="small text-muted mb-0">
+            Last button click: {new Date(last_datetime).toLocaleString()}
+          </p>
+        </div>
+      )}
     </div>
   );
 };
