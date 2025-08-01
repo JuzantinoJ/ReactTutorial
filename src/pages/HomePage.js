@@ -39,11 +39,12 @@ const HomePage = () => {
               element={
                 <AuthStatus 
                   last_datetime={last_datetime} 
-                  onViewed={() => setViewedAuthStatus(true)}
+                  // onViewed={() => setViewedAuthStatus(true)}
                 />
               } 
             />
           </Routes>
+          {viewedAuthStatus && <Link to="/home" className="btn btn-success" onClick={() => {setViewedAuthStatus(false);}}><i className="bi bi-toggles2"></i>Back</Link>}
         </div>
       </div>
       
