@@ -3,7 +3,50 @@
 
 # [React Hooks: useEffect, useState, and useContext – A Complete Guide](https://www.freecodecamp.org/news/react-hooks-useeffect-usestate-and-usecontext/)
 
-![App Screenshot](./Picture1.png)
+![App Screenshot](./Picture1.png)import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import UserProfile from '../components/UserProfile';
+
+const HomePage = () => {
+  const [last_datetime, setLastDatetime] = useState(null);
+
+  const handleButtonClick = () => {
+    setLastDatetime(new Date().toISOString());
+  };
+
+  return (
+    <div className="w-100" style={{maxWidth: '28rem'}}>
+      <h1 className="h3 fw-bold text-center text-dark mb-4">React Auth Demo</h1>
+      <div className="bg-white rounded shadow-lg overflow-hidden">
+        <UserProfile />
+        <div className="p-4 bg-light border-top text-center">
+          <Link 
+            to="/auth-status" 
+            state={{ last_datetime }}
+            className="btn btn-outline-primary"
+          >
+            View Auth Status
+          </Link>
+        </div>
+      </div>
+      
+      <div className="text-center mt-3">
+        <button 
+          className="btn btn-primary mb-2" 
+          onClick={handleButtonClick}
+        >
+          Capture DateTime
+        </button>
+      </div>
+      
+      <p className="text-center small text-muted mt-3">
+        This app demonstrates a simple authentication flow using React Context and Hooks.
+      </p>
+    </div>
+  );
+};
+
+export default HomePage;
 
 # Component Flow:
 
